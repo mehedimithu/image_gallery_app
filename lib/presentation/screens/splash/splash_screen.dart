@@ -48,14 +48,14 @@ class _SplashScreenState extends State<SplashScreen> {
                       text: '  implemented by ',
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          fontSize: 25.0,
+                          fontSize: 24.0,
                           color: TaskAppColors.kYellowColorAccent),
                     ),
                     TextSpan(
                       text: 'Md. Mehedi Hasan',
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          fontSize: 15.0,
+                          fontSize: 18.0,
                           color: TaskAppColors.kWhiteColor),
                     ),
                   ],
