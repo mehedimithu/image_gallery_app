@@ -75,8 +75,11 @@ class _GalleryScreenState extends State<GalleryScreen> {
     return Container(
       width: MediaQuery.of(context).size.width,
       margin: const EdgeInsets.all(10.0),
-      child: ImageLoader(
-        imageUrl: imageModel.downloadUrl.toString(),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(16.0),
+        child: ImageLoader(
+          imageUrl: imageModel.downloadUrl.toString(),
+        ),
       ),
     );
   }
