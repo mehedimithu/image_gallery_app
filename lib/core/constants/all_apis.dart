@@ -4,4 +4,6 @@ class AllApis {
 
   //--------------------Get a list of images-------------------------
   static const listOfImagesUrl = "$baseUrl/v2/list";
+  //--------------------Get information about a specific image-------
+  static const getInfoAboutImagesUrl = "$baseUrl/id/";
 }

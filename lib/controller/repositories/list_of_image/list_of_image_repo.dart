@@ -10,5 +10,3 @@ class ListOfImageRepo {
     return getList?.map((e) => ImageModel.fromJson(e)).toList();
   }
 }
-
-

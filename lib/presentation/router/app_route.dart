@@ -7,6 +7,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class AppRoutes {
   static const String splashScreenRoute = '/';
   static const String galleryScreenRoute = '/galleryScreen';
+  static const String imageInfoScreenRoute = '/imageInfoScreen';
 
   const AppRoutes._();
   static Route<dynamic>? onGenerateRoute(RouteSettings settings) {
@@ -15,10 +16,24 @@ class AppRoutes {
         return MaterialPageRoute(builder: (_) => const SplashScreen());
       case galleryScreenRoute:
         return MaterialPageRoute(
-            builder: (_) => BlocProvider(
-                create: (BuildContext context) =>
-                    ListOfImageCubit(ListOfImageRepo(ImageService())),
-                child: const GalleryScreen()));
+          builder: (_) => BlocProvider(
+            create: (BuildContext context) =>
+                ListOfImageCubit(ListOfImageRepo(ImageService())),
+            child: const GalleryScreen(),
+          ),
+        );
+      case imageInfoScreenRoute:
+        final arguments = settings.arguments as String;
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (BuildContext context) =>
+                ImageInfoCubit(InfoAboutImagesRepo(InfoImageService())),
+            child: ImageInfoScreen(
+              id: arguments,
+            ),
+          ),
+        );
+
       default:
         throw const RouteException('Route not found!');
     }
