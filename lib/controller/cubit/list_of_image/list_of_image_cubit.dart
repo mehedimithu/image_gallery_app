@@ -10,7 +10,7 @@ class ListOfImageCubit extends Cubit<ListOfImageState> {
   int page = 1;
   final ListOfImageRepo repository;
 
-  void loadImages({required int page}) {
+  void loadImages( ) {
     if (state is ListOfImageLoading) return;
     final currentState = state;
 

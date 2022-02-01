@@ -17,7 +17,8 @@ class ImageService {
     try {
       final response = await http.get(uri, headers: headers);
       debugPrint('Response: ' + response.body.toString());
-      return jsonDecode(response.body) as List<dynamic>;
+      return jsonDecode( utf8.decode(response.bodyBytes)) as List<dynamic>;
+
     } catch (err) {
       return [];
     }

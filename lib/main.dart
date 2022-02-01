@@ -15,12 +15,22 @@ class TaskApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: const Size(375, 812),
+      designSize: const Size(360, 690),
+      minTextAdapt: true,
+      splitScreenMode: true,
       builder: () => MaterialApp(
         title: TaskAppStrings.appTitle,
         theme: AppTheme.lightTheme,
         darkTheme: AppTheme.darkTheme,
         debugShowCheckedModeBanner: false,
+        builder: (context, widget) {
+          ScreenUtil.setContext(context);
+          return MediaQuery(
+            //Setting font does not change with system font size
+            data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
+            child: widget!,
+          );
+        },
         navigatorKey: navigatorKey,
         initialRoute: AppRoutes.splashScreenRoute,
         onGenerateRoute: AppRoutes.onGenerateRoute,

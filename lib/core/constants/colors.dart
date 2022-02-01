@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class TaskAppColors {
   static const kPrimaryColor = Color(0xFF12393C);
-  static const kColorAccent = Color(0xFFF3C365);
+  static const kYellowColorAccent = Color(0xFFF3C365);
   static const kBaseColor = Color(0xFFFFFFFF);
   static const kSliderBar = Color(0xFFB4B4B4);
   static const kDarkColor = Color(0xFF000000);
