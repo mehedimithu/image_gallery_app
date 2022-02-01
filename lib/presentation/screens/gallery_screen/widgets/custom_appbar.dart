@@ -12,10 +12,10 @@ PreferredSize customAppBar(
     child: Container(
       height: 120.h,
       decoration: const BoxDecoration(
-        color: TaskAppColors.kYellowColorAccent,
+        color: TaskAppColors.kPrimaryColor,
         borderRadius: BorderRadius.only(
-            bottomRight: Radius.circular(40.0),
-            bottomLeft: Radius.circular(40.0)),
+            bottomRight: Radius.circular(35.0),
+            bottomLeft: Radius.circular(35.0)),
       ),
       child: Padding(
         padding: const EdgeInsets.only(top: 30.0, left: 15),

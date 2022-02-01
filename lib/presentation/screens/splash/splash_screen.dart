@@ -29,16 +29,39 @@ class _SplashScreenState extends State<SplashScreen> {
       body: Container(
           height: size.height,
           width: size.width,
-          color: TaskAppColors.kNeutralColor,
+          color: TaskAppColors.kPrimaryColor,
           child: const Padding(
             padding: EdgeInsets.all(100),
             child: Center(
-                child: Text(
-              'Task app',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                  fontSize: 37.0, color: TaskAppColors.kBlack300Color),
-            )),
+              child: Text.rich(
+                TextSpan(
+                  children: [
+                    TextSpan(
+                      text: 'Interview Task',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 28.0,
+                          color: TaskAppColors.kWhiteColor),
+                    ),
+                    TextSpan(text: ''),
+                    TextSpan(
+                      text: '  implemented by ',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 25.0,
+                          color: TaskAppColors.kYellowColorAccent),
+                    ),
+                    TextSpan(
+                      text: 'Md. Mehedi Hasan',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 15.0,
+                          color: TaskAppColors.kWhiteColor),
+                    ),
+                  ],
+                ),
+              ),
+            ),
           )),
     );
   }

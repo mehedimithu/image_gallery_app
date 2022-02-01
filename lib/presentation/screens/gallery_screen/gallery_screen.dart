@@ -1,6 +1,4 @@
 import 'dart:async';
-
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:task_app/controller/controller.dart';
 import 'package:task_app/presentation/presentation.dart';
@@ -55,7 +53,7 @@ class _GalleryScreenState extends State<GalleryScreen> {
             shrinkWrap: true,
             itemCount: _imageList.length + (isLoading ? 1 : 0),
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 3),
+                crossAxisCount: 2, crossAxisSpacing: 2),
             itemBuilder: (context, index) {
               if (index < _imageList.length) {
                 return imageItemsList(_imageList[index], context);
@@ -95,7 +93,8 @@ class _GalleryScreenState extends State<GalleryScreen> {
     scrollController.addListener(() {
       if (scrollController.position.atEdge) {
         if (scrollController.position.pixels != 0) {
-          BlocProvider.of<ListOfImageCubit>(context).loadImages();
+          // BlocProvider.of<ListOfImageCubit>(context).loadImages();
+          _listOfImageCubit?.loadImages();
         }
       }
     });
