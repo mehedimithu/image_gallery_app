@@ -27,7 +27,7 @@ class AppRoutes {
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
             create: (BuildContext context) =>
-                ImageInfoCubit(InfoAboutImagesRepo(InfoImageService())),
+                ImageInfoCubit(InfoImageService()),
             child: ImageInfoScreen(
               id: arguments,
             ),

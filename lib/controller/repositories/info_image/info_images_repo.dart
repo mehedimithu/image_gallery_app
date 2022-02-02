@@ -8,6 +8,5 @@ class InfoAboutImagesRepo {
   Future getImageInfo(String id) async {
     final getImageInfo = await infoImageService.fetchInfo(id: id);
     return getImageInfo;
-    // return getList?.map((e) => ImageModel.fromJson(e)).toList();
   }
 }

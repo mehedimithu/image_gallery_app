@@ -15,7 +15,12 @@ class ImageLoader extends StatelessWidget {
           image: DecorationImage(image: imageProvider, fit: BoxFit.cover),
         ),
       ),
-      placeholder: (context, url) => const PlaceHolderImageLoader(),
+      placeholder: (context, url) => Column(
+        children: const [
+          Text("Loading.. "),
+          PlaceHolderImageLoader(),
+        ],
+      ),
       errorWidget: (context, url, error) => const Icon(Icons.error),
     );
   }
