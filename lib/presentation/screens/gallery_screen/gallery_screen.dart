@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:task_app/controller/controller.dart';
 import 'package:task_app/presentation/presentation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -79,7 +80,7 @@ class _GalleryScreenState extends State<GalleryScreen> {
       },
       child: Container(
         width: MediaQuery.of(context).size.width,
-        margin: const EdgeInsets.all(10.0),
+        margin: EdgeInsets.all(10.0.r),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(16.0),
           child: ImageLoader(
@@ -91,9 +92,9 @@ class _GalleryScreenState extends State<GalleryScreen> {
   }
 
   Widget _loadingIndicator() {
-    return const Padding(
-      padding: EdgeInsets.all(8.0),
-      child: Center(child: CircularProgressIndicator()),
+    return Padding(
+      padding: EdgeInsets.all(8.0.r),
+      child: const Center(child: CircularProgressIndicator()),
     );
   }
 
@@ -101,7 +102,6 @@ class _GalleryScreenState extends State<GalleryScreen> {
     scrollController.addListener(() {
       if (scrollController.position.atEdge) {
         if (scrollController.position.pixels != 0) {
-          // BlocProvider.of<ListOfImageCubit>(context).loadImages();
           _listOfImageCubit?.loadImages();
         }
       }

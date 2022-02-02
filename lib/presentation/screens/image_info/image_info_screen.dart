@@ -8,6 +8,8 @@ import 'package:task_app/controller/controller.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:task_app/core/constants/colors.dart';
 import 'package:task_app/presentation/presentation.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 
 class ImageInfoScreen extends StatefulWidget {
   const ImageInfoScreen({Key? key, required this.id, required this.downloadUrl})
@@ -41,10 +43,10 @@ class _ImageInfoScreenState extends State<ImageInfoScreen> {
   FloatingActionButton floatButton(String downloadUrl) {
     return FloatingActionButton(
         elevation: 0.0,
-        child: const Icon(
+        child:  Icon(
           Icons.share,
-          size: 25,
-          color: TaskAppColors.kWhiteColor,
+          size: 25.sp,
+          color: TaskAppColors.kYellowColorAccent,
         ),
         backgroundColor: Colors.transparent,
         onPressed: () async {
@@ -72,7 +74,7 @@ class _ImageInfoScreenState extends State<ImageInfoScreen> {
               child: ImageLoader(
                 imageUrl: state.imageModel.downloadUrl.toString(),
               ),
-              childSize: const Size(500.0, 500.0),
+              childSize:  Size(500.0.h, 500.0.w),
               backgroundDecoration:
                   const BoxDecoration(color: TaskAppColors.kBlack300Color),
               customSize: size,
@@ -89,9 +91,9 @@ class _ImageInfoScreenState extends State<ImageInfoScreen> {
   }
 
   Widget _loadingIndicator() {
-    return const Padding(
-      padding: EdgeInsets.all(8.0),
-      child: Center(child: CircularProgressIndicator()),
+    return  Padding(
+      padding: EdgeInsets.all(8.0.r),
+      child: const Center(child: CircularProgressIndicator()),
     );
   }
 }

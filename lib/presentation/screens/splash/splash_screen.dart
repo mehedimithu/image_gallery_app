@@ -1,8 +1,8 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:task_app/core/core.dart';
 import 'package:task_app/presentation/presentation.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -30,32 +30,31 @@ class _SplashScreenState extends State<SplashScreen> {
           height: size.height,
           width: size.width,
           color: TaskAppColors.kPrimaryColor,
-          child: const Padding(
-            padding: EdgeInsets.all(100),
+          child: Padding(
+            padding: EdgeInsets.all(80.0.r),
             child: Center(
               child: Text.rich(
                 TextSpan(
                   children: [
                     TextSpan(
-                      text: 'Interview Task',
+                      text: 'INTERVIEW TASK',
                       style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 28.0,
+                          fontWeight: FontWeight.w500,
+                          fontSize: 25.0.sp,
                           color: TaskAppColors.kWhiteColor),
                     ),
-                    TextSpan(text: ''),
                     TextSpan(
-                      text: '  implemented by ',
+                      text: ' Implemented by ',
                       style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 24.0,
+                          fontWeight: FontWeight.w400,
+                          fontSize: 20.0.sp,
                           color: TaskAppColors.kYellowColorAccent),
                     ),
                     TextSpan(
-                      text: 'Md. Mehedi Hasan',
+                      text: 'Md.Mehedi Hasan',
                       style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18.0,
+                          fontWeight: FontWeight.w400,
+                          fontSize: 18.0.sp,
                           color: TaskAppColors.kWhiteColor),
                     ),
                   ],
