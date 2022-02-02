@@ -36,6 +36,12 @@ dependencies:
   cupertino_icons: ^1.0.2
   cached_network_image: ^3.2.0
   photo_view: ^0.13.0
+  #share texts and files
+  share_plus:
+  path_provider:
+  #share image from files & gallery
+  file_picker:
+  image_picker:
 
 dev_dependencies:
   flutter_test:

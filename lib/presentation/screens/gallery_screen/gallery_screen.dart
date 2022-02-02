@@ -73,7 +73,9 @@ class _GalleryScreenState extends State<GalleryScreen> {
     return InkWell(
       onTap: () {
         Navigator.pushNamed(context, AppRoutes.imageInfoScreenRoute,
-            arguments: imageModel.id);
+            arguments: ScreenArguments(
+                downloadUrl: imageModel.downloadUrl.toString(),
+                id: imageModel.id.toString()));
       },
       child: Container(
         width: MediaQuery.of(context).size.width,

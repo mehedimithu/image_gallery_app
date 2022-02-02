@@ -23,13 +23,14 @@ class AppRoutes {
           ),
         );
       case imageInfoScreenRoute:
-        final arguments = settings.arguments as String;
+        final arguments = settings.arguments as ScreenArguments;
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
             create: (BuildContext context) =>
                 ImageInfoCubit(InfoImageService()),
             child: ImageInfoScreen(
-              id: arguments,
+              id: arguments.id,
+              downloadUrl: arguments.downloadUrl,
             ),
           ),
         );
