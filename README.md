@@ -13,8 +13,10 @@ This project is a starting point for a Flutter application.
 A few resources to get you started if this is your first Flutter project:
 
 - [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)!
-Screenshots::::::
+- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+
+
+Screenshots:
 (https://user-images.githubusercontent.com/30412200/152355979-0c9b5ff3-b029-409c-ab3e-1f4b4b00b71b.jpeg)
 (https://user-images.githubusercontent.com/30412200/152355996-40e621d9-2bb9-46e1-babe-43a35ce16c63.jpeg)
 (https://user-images.githubusercontent.com/30412200/152355999-1f39867c-d376-4455-b7d8-a1e95c927890.jpeg)
