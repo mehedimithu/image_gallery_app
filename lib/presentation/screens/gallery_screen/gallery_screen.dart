@@ -79,8 +79,8 @@ class _GalleryScreenState extends State<GalleryScreen> {
                 id: imageModel.id.toString()));
       },
       child: Container(
-        width: MediaQuery.of(context).size.width,
-        margin: EdgeInsets.all(10.0.r),
+        width: MediaQuery.of(context).size.width.w,
+        margin: const EdgeInsets.all(10.0),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(16.0),
           child: ImageLoader(
@@ -92,9 +92,9 @@ class _GalleryScreenState extends State<GalleryScreen> {
   }
 
   Widget _loadingIndicator() {
-    return Padding(
-      padding: EdgeInsets.all(8.0.r),
-      child: const Center(child: CircularProgressIndicator()),
+    return const Padding(
+      padding: EdgeInsets.all(8.0),
+      child: Center(child: CircularProgressIndicator()),
     );
   }
 

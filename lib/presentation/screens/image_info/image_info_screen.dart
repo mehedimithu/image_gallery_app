@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
@@ -8,8 +9,6 @@ import 'package:task_app/controller/controller.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:task_app/core/constants/colors.dart';
 import 'package:task_app/presentation/presentation.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 
 class ImageInfoScreen extends StatefulWidget {
   const ImageInfoScreen({Key? key, required this.id, required this.downloadUrl})
@@ -43,7 +42,7 @@ class _ImageInfoScreenState extends State<ImageInfoScreen> {
   FloatingActionButton floatButton(String downloadUrl) {
     return FloatingActionButton(
         elevation: 0.0,
-        child:  Icon(
+        child: Icon(
           Icons.share,
           size: 25.sp,
           color: TaskAppColors.kYellowColorAccent,
@@ -68,13 +67,13 @@ class _ImageInfoScreenState extends State<ImageInfoScreen> {
           return _loadingIndicator();
         } else if (state is ImageInfoLoaded) {
           return SizedBox(
-            width: double.infinity,
-            height: double.infinity,
+            width: double.infinity.w,
+            height: double.infinity.h,
             child: PhotoView.customChild(
               child: ImageLoader(
                 imageUrl: state.imageModel.downloadUrl.toString(),
               ),
-              childSize:  Size(500.0.h, 500.0.w),
+              childSize: Size(500.0.h, 500.0.w),
               backgroundDecoration:
                   const BoxDecoration(color: TaskAppColors.kBlack300Color),
               customSize: size,
@@ -91,9 +90,9 @@ class _ImageInfoScreenState extends State<ImageInfoScreen> {
   }
 
   Widget _loadingIndicator() {
-    return  Padding(
-      padding: EdgeInsets.all(8.0.r),
-      child: const Center(child: CircularProgressIndicator()),
+    return const Padding(
+      padding: EdgeInsets.all(8.0),
+      child: Center(child: CircularProgressIndicator()),
     );
   }
 }
