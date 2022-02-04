@@ -5,8 +5,8 @@ class ListOfImageRepo {
 
   ListOfImageRepo(this.imageService);
 
-  Future<List<ImageModel>?> getImageList(int page) async {
-    final getList = await imageService.fetchImages(page: page);
+  Future<List<ImageModel>?> getImageList(int page, int limit) async {
+    final getList = await imageService.fetchImages(page: page, limit: limit);
     return getList?.map((e) => ImageModel.fromJson(e)).toList();
   }
 }

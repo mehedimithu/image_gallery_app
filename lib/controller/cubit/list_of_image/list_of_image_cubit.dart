@@ -8,9 +8,10 @@ class ListOfImageCubit extends Cubit<ListOfImageState> {
   ListOfImageCubit(this.repository) : super(ListOfImageInitial());
 
   int page = 1;
+  int limit = 15;
   final ListOfImageRepo repository;
 
-  void loadImages( ) {
+  void loadImages() {
     if (state is ListOfImageLoading) return;
     final currentState = state;
 
@@ -21,8 +22,9 @@ class ListOfImageCubit extends Cubit<ListOfImageState> {
     }
     emit(ListOfImageLoading(oldListOfImage, isFirstFetch: page == 1));
 
-    repository.getImageList(page).then((newImages) {
+    repository.getImageList(page, limit).then((newImages) {
       page++;
+      limit++;
       final load = (state as ListOfImageLoading).oldListOfImage;
       load.addAll(newImages!);
 
