@@ -12,16 +12,19 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:task_app/controller/controller.dart';
 
 void main() {
-  InfoImageService repository;
+  InfoImageService _repository = InfoImageService();
 
   test('main', () async {
     String id = '0';
 
-    final response = await InfoImageService().fetchInfo(id: id);
+    final response = await _repository.fetchInfo(id: id);
     ImageModel imageModel =
         ImageModel.fromJson(jsonDecode(utf8.decode(response.bodyBytes)));
 
     debugPrint(imageModel.toJson().toString());
     expect(response.statusCode.toString(), '200');
+  });
+  tearDown(() {
+    debugPrint('Passed');
   });
 }
